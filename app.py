@@ -16,11 +16,14 @@ def recommend(selected_movie_name):
             posters.append("https://image.tmdb.org/t/p/w500" + l) 
         return recommended_movies,posters
 
-path = pickle.load(open('path.pkl','rb'))
-movies = pickle.load(open('movies.pkl','rb'))
+# path = pickle.load(open('path.pkl','rb'))
+# movies = pickle.load(open('movies.pkl','rb'))
+# movies_list = movies['title'].values
+# similarity = pickle.load(open('similarity.pkl','rb'))
+path = pd.compat.pickle_compat.load(open('path.pkl','rb'))
+movies = pd.compat.pickle_compat.load(open('movies.pkl','rb'))
 movies_list = movies['title'].values
-similarity = pickle.load(open('similarity.pkl','rb'))
-
+similarity = pd.compat.pickle_compat.load(open('similarity.pkl','rb'))
 
 st.title('Movies Recommender System')
 
